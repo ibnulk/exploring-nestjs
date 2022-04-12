@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Param,
+  Post,
+} from '@nestjs/common';
 
 @Controller('coffees')
 export class CoffeesController {
@@ -12,8 +20,15 @@ export class CoffeesController {
     return `This action return ${id} coffee`;
   }
 
-  @Post()
+  //   @Post()
   create(@Body() body) {
     return body;
   }
+
+  // Example of handling HTTP status code
+  //   @Post()
+  //   @HttpCode(HttpStatus.GONE)
+  //   create(@Body() body) {
+  //     return body;
+  //   }
 }
